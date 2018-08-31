@@ -69,17 +69,14 @@ class HtmlTag
 
             // Adds class attributes.
             let class_attr = this._generateClassAttribute();
-            if (class_attr !== '')
-            {
+            if (class_attr !== '') {
                 html += ' ' + class_attr;
             }
 
             let attr_count = this.attributes.length;
-            for (let i = 0; i < attr_count; ++i)
-            {
+            for (let i = 0; i < attr_count; ++i) {
                 let attr = this.attributes[i];
-                if (attr.value && (attr.key !== 'class'))
-                {
+                if (attr.value && (attr.key !== 'class')) {
                     html += ' ' + attr.key + '="' + attr.value + '"';
                 }
             }
