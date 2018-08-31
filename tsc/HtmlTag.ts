@@ -40,8 +40,8 @@ class HtmlTag
         let class_value = '',
             class_count = this.classes.length;
 
-        for (var i = 0; i < class_count; ++i) {
-            var cur_class = this.classes[i];
+        for (let i = 0; i < class_count; ++i) {
+            let cur_class = this.classes[i];
             if (cur_class) {
                 class_value += cur_class;
             }
@@ -75,7 +75,7 @@ class HtmlTag
             }
 
             let attr_count = this.attributes.length;
-            for (var i = 0; i < attr_count; ++i)
+            for (let i = 0; i < attr_count; ++i)
             {
                 let attr = this.attributes[i];
                 if (attr.value && (attr.key !== 'class'))

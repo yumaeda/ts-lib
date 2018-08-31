@@ -11,8 +11,7 @@ sudo npm install webpack -g
 
 3. Compile TypeScript files
 ```bash
-cd ts
-tsc *.ts
+tsc ./tsc/*.tsc
 ```
 
 4. Bundles JavaScirpt files

@@ -5,7 +5,7 @@ module.exports = {
         "./src/ButtonTag.js",
         "./src/DivTag.js",
         "./src/FigureTag.js",
-        "./src/HtmlTag.js",
+        "./tsc/HtmlTag.js",
         "./src/ImageTag.js",
         "./src/InputTag.js",
         "./src/LabelTag.js",
