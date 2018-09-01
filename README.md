@@ -1,20 +1,16 @@
 ## Installation
-1. Install TypeScript
+1. Install TypeScript & webpack
 ```bash
 sudo npm install -g typescript
-```
-
-2. Install webpack
-```bash
 sudo npm install webpack -g
 ```
 
-3. Compile TypeScript files
+2. Compile
 ```bash
-tsc --module commonjs ./tsc/*.tsc
+npm run build
 ```
 
-4. Bundles JavaScirpt files
+3. Run test
 ```bash
-webpack
+npm start
 ```

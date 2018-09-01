@@ -1,3 +1,2 @@
 dist
-./ts/*.js
-test.html
+node_modules

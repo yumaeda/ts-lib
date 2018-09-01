@@ -41,9 +41,12 @@ export class HtmlTag implements HtmlTagInterface {
      * @return string
      */
     _generateClassAttribute(): string {
-        let class_value = '',
-            class_count = this.classes.length;
+        let class_count = this.classes.length;
+        if (class_count === 0) {
+            return '';
+        }
 
+        let class_value = '';
         for (let i = 0; i < class_count; ++i) {
             let cur_class = this.classes[i];
             if (cur_class) {
@@ -176,12 +179,12 @@ export class HtmlTag implements HtmlTagInterface {
      * @return string
      */
     getOuterHtml(): string {
-        if (!this.isSelfClosing() && this.value) {
+        if (this.isSelfClosing() && this.value) {
             this.attributes.push({ key: 'value', value: this.value });
         }
 
         let html = this._generateOpeningTag();
-        if (this.isSelfClosing()) {
+        if (!this.isSelfClosing()) {
             html += this.value + this._generateClosingTag();
         }
 

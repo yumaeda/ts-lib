@@ -1,0 +1,30 @@
+{
+  "name": "html-tags",
+  "version": "1.0.0",
+  "description": "JavaScript library for HTML tags",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yumaeda/html-tags.git"
+  },
+  "keywords": [
+    "html-tags"
+  ],
+  "author": "Yukitaka Maeda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yumaeda/html-tags/issues"
+  },
+  "homepage": "https://github.com/yumaeda/html-tags#readme",
+  "devDependencies": {
+    "ts-loader": "^4.5.0",
+    "typescript": "^3.0.3",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.7"
+  }
+}
