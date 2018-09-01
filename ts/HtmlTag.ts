@@ -1,16 +1,25 @@
+import {HtmlTagInterface} from './HtmlTagInterface';
+
 /**
  * Base class of all the HTML tags
  *
- * @author Yukitaka Maeda
+ * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-class HtmlTag
-{
-    tag: string;
+export class HtmlTag implements HtmlTagInterface {
+    /**
+     * Value of the tag
+     */
     value: string;
+
+    /**
+     * Key-value pair of the attributes
+     */
     attributes: { key: string, value: string }[];
+
+    /**
+     * Values of the tag's class attribute
+     */
     classes: string[];
-    is_container: boolean;
-    is_self_closing: boolean;
 
     /**
      * Constructor for HtmlTag class
@@ -19,14 +28,10 @@ class HtmlTag
      * @param string value
      * @return void
      */
-    constructor(tag: string, value: string)
-    {
-        this.tag             = tag;
+    constructor(value: string) {
         this.value           = value;
         this.attributes      = []; 
         this.classes         = [];
-        this.is_container    = false;
-        this.is_self_closing = true;
     }
 
     /**
@@ -35,8 +40,7 @@ class HtmlTag
      * @access private
      * @return string
      */
-    _generateClassAttribute(): string
-    {
+    _generateClassAttribute(): string {
         let class_value = '',
             class_count = this.classes.length;
 
@@ -60,12 +64,12 @@ class HtmlTag
      * @access private
      * @return string
      */
-    _generateOpeningTag(): string
-    {
-        let html = '';
+    _generateOpeningTag(): string {
+        let html = '',
+            tag  = this.getTagName();
 
-        if (this.tag && (this.tag.length > 0)) {
-            html = '<' + this.tag;
+        if (tag && (tag.length > 0)) {
+            html = '<' + tag;
 
             // Adds class attributes.
             let class_attr = this._generateClassAttribute();
@@ -93,9 +97,8 @@ class HtmlTag
      * @access private
      * @return string
      */
-    _generateClosingTag(): string
-    {
-        return ('</' + this.tag + '>');
+    _generateClosingTag(): string {
+        return ('</' + this.getTagName() + '>');
     }
 
     /**
@@ -106,8 +109,7 @@ class HtmlTag
      * @param string value
      * @return void
      */
-    addAttr(key: string, value: string)
-    {
+    addAttr(key: string, value: string) {
         // key cannot be an empty string, but value can.
         if ((key && key.length > 0) && (value)) {
             this.attributes.push({ key: key, value: value});
@@ -121,27 +123,65 @@ class HtmlTag
      * @param string class_name
      * @return void
      */
-    addClass(class_name: string): void
-    {
+    addClass(class_name: string): void {
         if (class_name && (class_name.length > 0)) {
             this.classes.push(class_name);
         }
     }
 
     /**
-     * Converts this object to actual HTML markup
+     * Get name of the tag
      *
      * @access public 
      * @return string
      */
-    toHtml(): string
-    {
-        if (!this.is_self_closing && this.value) {
+    getTagName(): string {
+        return '';
+    }
+
+    /**
+     * Gets an boolean value whether the tag is self-closing or not
+     *
+     * @access public 
+     * @return boolean
+     */
+    isSelfClosing(): boolean {
+        return true;
+    }
+
+    /**
+     * Gets an boolean value whether the tag is block or not
+     *
+     * @access public 
+     * @return boolean
+     */
+    isBlock(): boolean {
+        return false;
+    }
+
+    /**
+     * Gets an inner HTML of the tag
+     *
+     * @access public 
+     * @return string
+     */
+    getInnerHtml(): string {
+        return this.isSelfClosing() ? '' : this.value;
+    }
+
+    /**
+     * Gets an outer HTML of the tag
+     *
+     * @access public 
+     * @return string
+     */
+    getOuterHtml(): string {
+        if (!this.isSelfClosing() && this.value) {
             this.attributes.push({ key: 'value', value: this.value });
         }
 
         let html = this._generateOpeningTag();
-        if (this.is_self_closing) {
+        if (this.isSelfClosing()) {
             html += this.value + this._generateClosingTag();
         }
 
