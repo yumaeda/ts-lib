@@ -29,9 +29,9 @@ export class HtmlTag implements HtmlTagInterface {
      * @return void
      */
     constructor(value: string) {
-        this.value           = value;
-        this.attributes      = []; 
-        this.classes         = [];
+        this.value      = value;
+        this.attributes = []; 
+        this.classes    = [];
     }
 
     /**
