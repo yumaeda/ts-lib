@@ -1,5 +1,5 @@
-import {ParagraphTag} from './ParagraphTag';
+import {DivTag} from './DivTag';
 
-let pTag: any = new ParagraphTag('Dick');
+let pTag: any = new DivTag('Dick');
 console.log(pTag.getOuterHtml());
 console.log(pTag.getInnerHtml());
