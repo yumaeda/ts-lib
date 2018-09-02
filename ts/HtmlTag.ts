@@ -24,7 +24,6 @@ export class HtmlTag implements HtmlTagInterface {
     /**
      * Constructor for HtmlTag class
      *
-     * @param string tag
      * @param string value
      * @return void
      */
