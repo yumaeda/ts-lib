@@ -5,27 +5,24 @@ import {HtmlTag} from './HtmlTag';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class ImageTag extends HtmlTag
-{
-    /**
-     * Get name of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getTagName(): string {
-        return 'img';
-    }
-
+export class ImageTag extends HtmlTag {
     /**
      * Constructor for ImageTag class
      *
      * @param string url
      * @return void
      */
-    constructor(url: string) {
+    public constructor(url: string) {
         super('');
         super.addAttr('src', url);
     }
-}
 
+    /**
+     * Get name of the tag
+     *
+     * @return string
+     */
+    public getTagName(): string {
+        return 'img';
+    }
+}

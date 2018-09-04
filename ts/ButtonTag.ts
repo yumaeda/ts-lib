@@ -5,37 +5,33 @@ import {HtmlTag} from './HtmlTag';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class ButtonTag extends HtmlTag
-{
-    /**
-     * Get name of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getTagName(): string {
-        return 'button';
-    }
-
-    /**
-     * Gets an boolean value whether the tag is self-closing or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isSelfClosing(): boolean {
-        return false;
-    }
-
+export class ButtonTag extends HtmlTag {
     /**
      * Constructor for ButtonTag class
      *
      * @param string value
      * @return void
      */
-    constructor(value: string) {
+    public constructor(value: string) {
         super(value);
         super.addAttr('type', 'button');
     }
-}
 
+    /**
+     * Get name of the tag
+     *
+     * @return string
+     */
+    public getTagName(): string {
+        return 'button';
+    }
+
+    /**
+     * Gets an boolean value whether the tag is self-closing or not
+     *
+     * @return boolean
+     */
+    public isSelfClosing(): boolean {
+        return false;
+    }
+}

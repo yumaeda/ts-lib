@@ -5,26 +5,22 @@ import {HtmlTag} from './HtmlTag';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class ListItemTag extends HtmlTag
-{
+export class ListItemTag extends HtmlTag {
     /**
      * Get name of the tag
      *
-     * @access public 
      * @return string
      */
-    getTagName(): string {
+    public getTagName(): string {
         return 'li';
     }
 
     /**
      * Gets an boolean value whether the tag is self-closing or not
      *
-     * @access public 
      * @return boolean
      */
-    isSelfClosing(): boolean {
+    public isSelfClosing(): boolean {
         return false;
     }
 }
-

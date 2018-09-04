@@ -1,25 +1,26 @@
-import {HtmlTagInterface} from './HtmlTagInterface';
+import {IHtmlTag} from './IHtmlTag';
+import {KeyValuePair} from './KeyValuePair';
 
 /**
  * Base class of all the HTML tags
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class HtmlTag implements HtmlTagInterface {
+export class HtmlTag implements IHtmlTag {
     /**
      * Value of the tag
      */
-    value: string;
+    protected value: string;
 
     /**
      * Key-value pair of the attributes
      */
-    attributes: { key: string, value: string }[];
+    private attributes: KeyValuePair[];
 
     /**
      * Values of the tag's class attribute
      */
-    classes: string[];
+    private classes: string[];
 
     /**
      * Constructor for HtmlTag class
@@ -27,63 +28,142 @@ export class HtmlTag implements HtmlTagInterface {
      * @param string value
      * @return void
      */
-    constructor(value: string) {
+    public constructor(value: string) {
         this.value      = value;
-        this.attributes = []; 
+        this.attributes = [];
         this.classes    = [];
+    }
+
+    /**
+     * Adds an attribute for HTML tag
+     *
+     * @param string key
+     * @param string value
+     * @return void
+     */
+    public addAttr(key: string, value: string) {
+        // key cannot be an empty string, but value can.
+        if ((key && key.length > 0) && (value)) {
+            this.attributes.push(new KeyValuePair(key, value));
+        }
+    }
+
+    /**
+     * Adds a "class" attribute
+     *
+     * @param string className
+     * @return void
+     */
+    public addClass(className: string): void {
+        if (className && (className.length > 0)) {
+            this.classes.push(className);
+        }
+    }
+
+    /**
+     * Get name of the tag
+     *
+     * @return string
+     */
+    public getTagName(): string {
+        return '';
+    }
+
+    /**
+     * Gets an boolean value whether the tag is self-closing or not
+     *
+     * @return boolean
+     */
+    public isSelfClosing(): boolean {
+        return true;
+    }
+
+    /**
+     * Gets an boolean value whether the tag is block or not
+     *
+     * @return boolean
+     */
+    public isBlock(): boolean {
+        return false;
+    }
+
+    /**
+     * Gets an inner HTML of the tag
+     *
+     * @return string
+     */
+    public getInnerHtml(): string {
+        return this.isSelfClosing() ? '' : this.value;
+    }
+
+    /**
+     * Gets an outer HTML of the tag
+     *
+     * @return string
+     */
+    public getOuterHtml(): string {
+        if (this.isSelfClosing() && this.value) {
+            this.attributes.push(new KeyValuePair('value', this.value));
+        }
+
+        let html = this.generateOpeningTag();
+        if (!this.isSelfClosing()) {
+            html += this.value + this.generateClosingTag();
+        }
+
+        return html;
     }
 
     /**
      * Generates value of "class" attribute
      *
-     * @access private
      * @return string
      */
-    _generateClassAttribute(): string {
-        let class_count = this.classes.length;
-        if (class_count === 0) {
+    private generateClassAttribute(): string {
+        const classCount = this.classes.length;
+        if (classCount === 0) {
             return '';
         }
 
-        let class_value = '';
-        for (let i = 0; i < class_count; ++i) {
-            let cur_class = this.classes[i];
-            if (cur_class) {
-                class_value += cur_class;
+        let classValue = '';
+        for (let i = 0; i < classCount; ++i) {
+            const curClass = this.classes[i];
+            if (curClass) {
+                classValue += curClass;
             }
 
-            if (i < (class_count - 1)) {
-                class_value += ' ';
+            if (i < (classCount - 1)) {
+                classValue += ' ';
             }
         }
 
-        return ('class="' + class_value + '"');
+        return ('class="' + classValue + '"');
     }
 
     /**
      * Generates HTML opening tag
      *
-     * @access private
      * @return string
      */
-    _generateOpeningTag(): string {
-        let html = '',
-            tag  = this.getTagName();
+    private generateOpeningTag(): string {
+        let html = '';
+        const tag = this.getTagName();
 
         if (tag && (tag.length > 0)) {
             html = '<' + tag;
 
             // Adds class attributes.
-            let class_attr = this._generateClassAttribute();
-            if (class_attr !== '') {
-                html += ' ' + class_attr;
+            const classAttr = this.generateClassAttribute();
+            if (classAttr !== '') {
+                html += ' ' + classAttr;
             }
 
-            let attr_count = this.attributes.length;
-            for (let i = 0; i < attr_count; ++i) {
-                let attr = this.attributes[i];
-                if (attr.value && (attr.key !== 'class')) {
-                    html += ' ' + attr.key + '="' + attr.value + '"';
+            const attrCount = this.attributes.length;
+            for (let i = 0; i < attrCount; ++i) {
+                const key = this.attributes[i].key;
+                const value = this.attributes[i].value;
+                if (value && (key !== 'class')) {
+                    html += ' ' + key + '="' + value + '"';
                 }
             }
 
@@ -96,98 +176,9 @@ export class HtmlTag implements HtmlTagInterface {
     /**
      * Generates HTML closing tag
      *
-     * @access private
      * @return string
      */
-    _generateClosingTag(): string {
+    private generateClosingTag(): string {
         return ('</' + this.getTagName() + '>');
     }
-
-    /**
-     * Adds an attribute for HTML tag
-     *
-     * @access public 
-     * @param string key
-     * @param string value
-     * @return void
-     */
-    addAttr(key: string, value: string) {
-        // key cannot be an empty string, but value can.
-        if ((key && key.length > 0) && (value)) {
-            this.attributes.push({ key: key, value: value});
-        }
-    }
-
-    /**
-     * Adds a "class" attribute
-     *
-     * @access public 
-     * @param string class_name
-     * @return void
-     */
-    addClass(class_name: string): void {
-        if (class_name && (class_name.length > 0)) {
-            this.classes.push(class_name);
-        }
-    }
-
-    /**
-     * Get name of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getTagName(): string {
-        return '';
-    }
-
-    /**
-     * Gets an boolean value whether the tag is self-closing or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isSelfClosing(): boolean {
-        return true;
-    }
-
-    /**
-     * Gets an boolean value whether the tag is block or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isBlock(): boolean {
-        return false;
-    }
-
-    /**
-     * Gets an inner HTML of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getInnerHtml(): string {
-        return this.isSelfClosing() ? '' : this.value;
-    }
-
-    /**
-     * Gets an outer HTML of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getOuterHtml(): string {
-        if (this.isSelfClosing() && this.value) {
-            this.attributes.push({ key: 'value', value: this.value });
-        }
-
-        let html = this._generateOpeningTag();
-        if (!this.isSelfClosing()) {
-            html += this.value + this._generateClosingTag();
-        }
-
-        return html;
-    }
 }
-

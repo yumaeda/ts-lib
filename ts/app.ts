@@ -1,9 +1,6 @@
-import {ListItemTag} from './ListItemTag';
-import {ListTag} from './ListTag';
+import {ImageTag} from './ImageTag';
 
-let listTag: any = new ListTag(true);
-listTag.addItem(new ListItemTag('<span>DICK</span>'));
-listTag.addItem(new ListItemTag('<span>COCK</span>'));
-listTag.addItem(new ListItemTag('<span>PENUS</span>'));
-console.log(listTag.getOuterHtml());
-console.log(listTag.getInnerHtml());
+const imgTag: any = new ImageTag('https://static.zerochan.net/Stellar.Loussier.full.12582.jpg');
+
+document.write(imgTag.getOuterHtml());
+document.write(imgTag.getInnerHtml());

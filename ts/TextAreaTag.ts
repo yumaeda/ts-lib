@@ -5,28 +5,7 @@ import {HtmlTag} from './HtmlTag';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class TextAreaTag extends HtmlTag
-{
-    /**
-     * Get name of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getTagName(): string {
-        return 'textarea';
-    }
-
-    /**
-     * Gets an boolean value whether the tag is self-closing or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isSelfClosing(): boolean {
-        return false;
-    }
-
+export class TextAreaTag extends HtmlTag {
     /**
      * Constructor for InputTag class
      *
@@ -34,10 +13,27 @@ export class TextAreaTag extends HtmlTag
      * @param string value
      * @return void
      */
-    constructor(name: string, value: string) {
+    public constructor(name: string, value: string) {
         super(value);
         super.addAttr('name', name);
         super.addAttr('rows', '4');
     }
-}
 
+    /**
+     * Get name of the tag
+     *
+     * @return string
+     */
+    public getTagName(): string {
+        return 'textarea';
+    }
+
+    /**
+     * Gets an boolean value whether the tag is self-closing or not
+     *
+     * @return boolean
+     */
+    public isSelfClosing(): boolean {
+        return false;
+    }
+}

@@ -1,8 +1,8 @@
 ## Installation
 1. Install TypeScript & webpack
 ```bash
-sudo npm install -g typescript
-sudo npm install webpack -g
+sudo npm install -g webpack webpack-cli webpack-dev-server
+sudo npm install -g typescript tslint tslint-webpack-plugin
 ```
 
 2. Compile

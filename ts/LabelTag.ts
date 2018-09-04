@@ -5,28 +5,7 @@ import {HtmlTag} from './HtmlTag';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class LabelTag extends HtmlTag
-{
-    /**
-     * Get name of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getTagName(): string {
-        return 'label';
-    }
-
-    /**
-     * Gets an boolean value whether the tag is self-closing or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isSelfClosing(): boolean {
-        return false;
-    }
-
+export class LabelTag extends HtmlTag {
     /**
      * Constructor for LabelTag class
      *
@@ -34,12 +13,29 @@ export class LabelTag extends HtmlTag
      * @param string value
      * @return void
      */
-    constructor(target: string, value: string) {
+    public constructor(target: string, value: string) {
         super(value);
 
         if (target && (target.length > 0)) {
             super.addAttr('for', target);
         }
     }
-}
 
+    /**
+     * Get name of the tag
+     *
+     * @return string
+     */
+    public getTagName(): string {
+        return 'label';
+    }
+
+    /**
+     * Gets an boolean value whether the tag is self-closing or not
+     *
+     * @return boolean
+     */
+    public isSelfClosing(): boolean {
+        return false;
+    }
+}

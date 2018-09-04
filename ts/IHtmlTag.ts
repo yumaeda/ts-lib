@@ -3,12 +3,10 @@
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export interface HtmlTagInterface
-{
+export interface IHtmlTag {
     getTagName(): string;
     isSelfClosing(): boolean;
     isBlock(): boolean;
     getInnerHtml(): string;
     getOuterHtml(): string;
 }
-

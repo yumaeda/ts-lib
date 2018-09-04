@@ -6,47 +6,16 @@ import {ListItemTag} from './ListItemTag';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class ListTag extends HtmlTag
-{
+export class ListTag extends HtmlTag {
     /**
      * Boolean value whether the list is ordered or not
      */
-    ordered: boolean;
+    private ordered: boolean;
 
     /**
      * List items
      */
-    items: ListItemTag[];
-
-    /**
-     * Get name of the tag
-     *
-     * @access public 
-     * @return string
-     */
-    getTagName(): string {
-        return this.ordered ? 'ol' : 'ul';
-    }
-
-    /**
-     * Gets an boolean value whether the tag is self-closing or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isSelfClosing(): boolean {
-        return false;
-    }
-
-    /**
-     * Gets an boolean value whether the tag is block or not
-     *
-     * @access public 
-     * @return boolean
-     */
-    isBlock(): boolean {
-        return true;
-    }
+    private items: ListItemTag[];
 
     /**
      * Constructor for ListTag class
@@ -54,11 +23,38 @@ export class ListTag extends HtmlTag
      * @param boolean ordered
      * @return void
      */
-    constructor(ordered: boolean) {
+    public constructor(ordered: boolean) {
         super('');
 
         this.ordered = ordered;
         this.items = [];
+    }
+
+    /**
+     * Get name of the tag
+     *
+     * @return string
+     */
+    public getTagName(): string {
+        return this.ordered ? 'ol' : 'ul';
+    }
+
+    /**
+     * Gets an boolean value whether the tag is self-closing or not
+     *
+     * @return boolean
+     */
+    public isSelfClosing(): boolean {
+        return false;
+    }
+
+    /**
+     * Gets an boolean value whether the tag is block or not
+     *
+     * @return boolean
+     */
+    public isBlock(): boolean {
+        return true;
     }
 
     /**
@@ -67,20 +63,20 @@ export class ListTag extends HtmlTag
      * @param ListItemTag item
      * @return void
      */
-    addItem(item: ListItemTag): void {
+    public addItem(item: ListItemTag): void {
         this.items.push(item);
     }
 
     /**
      * Gets an inner HTML of the tag
      *
-     * @access public 
      * @return string
      */
-    getInnerHtml(): string {
-        let html       = '',
-            item_count = this.items.length;
-        for (let i = 0; i < item_count; ++i) {
+    public getInnerHtml(): string {
+        let html = '';
+
+        const itemCount = this.items.length;
+        for (let i = 0; i < itemCount; ++i) {
             html += this.items[i].getOuterHtml();
         }
 
@@ -90,13 +86,11 @@ export class ListTag extends HtmlTag
     /**
      * Gets an outer HTML of the tag
      *
-     * @access public 
      * @return string
      */
-    getOuterHtml(): string {
+    public getOuterHtml(): string {
         this.value = this.getInnerHtml();
 
         return super.getOuterHtml();
     }
 }
-
