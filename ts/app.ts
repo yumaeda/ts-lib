@@ -1,5 +1,5 @@
-import {LabelTag} from './LabelTag';
+import {TextAreaTag} from './TextAreaTag';
 
-let pTag: any = new LabelTag('dickInput', 'Dick Input: ');
+let pTag: any = new TextAreaTag('txt_field', 'Ho Ho Ho');
 console.log(pTag.getOuterHtml());
 console.log(pTag.getInnerHtml());
