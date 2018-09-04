@@ -1,5 +1,5 @@
-import {SpanTag} from './SpanTag';
+import {LabelTag} from './LabelTag';
 
-let pTag: any = new SpanTag('Google');
+let pTag: any = new LabelTag('dickInput', 'Dick Input: ');
 console.log(pTag.getOuterHtml());
 console.log(pTag.getInnerHtml());
