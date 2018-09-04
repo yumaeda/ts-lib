@@ -1,5 +1,9 @@
-import {TextAreaTag} from './TextAreaTag';
+import {ListItemTag} from './ListItemTag';
+import {ListTag} from './ListTag';
 
-let pTag: any = new TextAreaTag('txt_field', 'Ho Ho Ho');
-console.log(pTag.getOuterHtml());
-console.log(pTag.getInnerHtml());
+let listTag: any = new ListTag(true);
+listTag.addItem(new ListItemTag('<span>DICK</span>'));
+listTag.addItem(new ListItemTag('<span>COCK</span>'));
+listTag.addItem(new ListItemTag('<span>PENUS</span>'));
+console.log(listTag.getOuterHtml());
+console.log(listTag.getInnerHtml());
