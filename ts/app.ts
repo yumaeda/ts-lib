@@ -1,6 +1,6 @@
-import {ImageTag} from './ImageTag';
+import {FigureTag} from './FigureTag';
 
-const imgTag: any = new ImageTag('https://static.zerochan.net/Stellar.Loussier.full.12582.jpg');
+const figTag: any = new FigureTag('https://static.zerochan.net/Stellar.Loussier.full.12582.jpg', 'Google');
 
-document.write(imgTag.getOuterHtml());
-document.write(imgTag.getInnerHtml());
+document.write(figTag.getInnerHtml());
+document.write(figTag.getOuterHtml());
