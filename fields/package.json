@@ -1,7 +1,7 @@
 {
   "name": "html-tags",
   "version": "1.0.0",
-  "description": "JavaScript library for HTML tags",
+  "description": "TypeScript: Html input fields",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
