@@ -3,7 +3,7 @@ const TSLintPlugin = require('tslint-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './ts/app.ts',
+    entry: './src/app.ts',
     module: {
         rules: [
             {
@@ -19,7 +19,7 @@ module.exports = {
     plugins: [
         new TSLintPlugin(
         {
-            files: [ './ts/**/*.ts' ]
+            files: [ './src/**/*.ts' ]
         })
     ],
     output: {
