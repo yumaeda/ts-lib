@@ -1,25 +1,25 @@
-import {TableColumnTag} from './TableColumnTag';
-import {TableRowTag} from './TableRowTag';
-import {TableTag} from './TableTag';
+import { TableColumnTag } from './TableColumnTag'
+import { TableRowTag } from './TableRowTag'
+import { TableTag } from './TableTag'
 
-const tableTag: TableTag = new TableTag();
-const headRow: TableRowTag = new TableRowTag();
-const bodyRow: TableRowTag = new TableRowTag();
-const footRow: TableRowTag = new TableRowTag();
-
-for (let i = 0; i < 10; ++i) {
-    headRow.addColumn(new TableColumnTag('<span>' + i + '</span>'));
-}
-tableTag.head.addRow(headRow);
+const tableTag: TableTag = new TableTag()
+const headRow: TableRowTag = new TableRowTag()
+const bodyRow: TableRowTag = new TableRowTag()
+const footRow: TableRowTag = new TableRowTag()
 
 for (let i = 0; i < 10; ++i) {
-    bodyRow.addColumn(new TableColumnTag('<span>' + (i * 2) + '</span>'));
+    headRow.addColumn(new TableColumnTag('<span>' + i + '</span>'))
 }
-tableTag.body.addRow(bodyRow);
+tableTag.head.addRow(headRow)
 
 for (let i = 0; i < 10; ++i) {
-    footRow.addColumn(new TableColumnTag('<span>' + (i * 3) + '</span>'));
+    bodyRow.addColumn(new TableColumnTag('<span>' + i * 2 + '</span>'))
 }
-tableTag.foot.addRow(footRow);
+tableTag.body.addRow(bodyRow)
 
-document.write(tableTag.getOuterHtml());
+for (let i = 0; i < 10; ++i) {
+    footRow.addColumn(new TableColumnTag('<span>' + i * 3 + '</span>'))
+}
+tableTag.foot.addRow(footRow)
+
+document.write(tableTag.getOuterHtml())

@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * FigCaption tag '<figcaption>'
@@ -12,7 +12,7 @@ export class FigCaptionTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'figcaption';
+        return 'figcaption'
     }
 
     /**
@@ -21,6 +21,6 @@ export class FigCaptionTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 }

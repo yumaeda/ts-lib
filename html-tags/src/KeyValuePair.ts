@@ -7,12 +7,12 @@ export class KeyValuePair {
     /**
      * Key for retrieving a value
      */
-    public key: string;
+    public key: string
 
     /**
      * Value to be retrieved
      */
-    public value: string;
+    public value: string
 
     /**
      * Constructor for KeyValuePair class
@@ -22,7 +22,7 @@ export class KeyValuePair {
      * @return void
      */
     public constructor(key: string, value: string) {
-        this.key = key;
-        this.value = value;
+        this.key = key
+        this.value = value
     }
 }

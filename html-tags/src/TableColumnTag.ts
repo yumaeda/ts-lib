@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Table column tag '<td>'
@@ -12,7 +12,7 @@ export class TableColumnTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'td';
+        return 'td'
     }
 
     /**
@@ -21,7 +21,7 @@ export class TableColumnTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -30,6 +30,6 @@ export class TableColumnTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return true;
+        return true
     }
 }

@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Button tag '<button>'
@@ -13,8 +13,8 @@ export class ButtonTag extends HtmlTag {
      * @return void
      */
     public constructor(value: string) {
-        super(value);
-        super.addAttr('type', 'button');
+        super(value)
+        super.addAttr('type', 'button')
     }
 
     /**
@@ -23,7 +23,7 @@ export class ButtonTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'button';
+        return 'button'
     }
 
     /**
@@ -32,6 +32,6 @@ export class ButtonTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 }

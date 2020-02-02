@@ -1,4 +1,4 @@
-import {TableContainerTag} from './TableContainerTag';
+import { TableContainerTag } from './TableContainerTag'
 
 /**
  * Table body class '<tbody>'
@@ -12,6 +12,6 @@ export class TableBodyTag extends TableContainerTag {
      * @return string
      */
     public getTagName(): string {
-        return 'tbody';
+        return 'tbody'
     }
 }

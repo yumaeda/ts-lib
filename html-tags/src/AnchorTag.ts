@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Anchor tag '<a>'
@@ -14,10 +14,10 @@ export class AnchorTag extends HtmlTag {
      * @return void
      */
     public constructor(url: string, value: string) {
-        super(value);
+        super(value)
 
-        if (url && (url.length > 0)) {
-            super.addAttr('href', url);
+        if (url && url.length > 0) {
+            super.addAttr('href', url)
         }
     }
 
@@ -27,7 +27,7 @@ export class AnchorTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'a';
+        return 'a'
     }
 
     /**
@@ -36,7 +36,7 @@ export class AnchorTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -45,6 +45,6 @@ export class AnchorTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return false;
+        return false
     }
 }

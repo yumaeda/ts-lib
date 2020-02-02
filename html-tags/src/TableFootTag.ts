@@ -1,4 +1,4 @@
-import {TableContainerTag} from './TableContainerTag';
+import { TableContainerTag } from './TableContainerTag'
 
 /**
  * Table foot class '<tfoot>'
@@ -12,6 +12,6 @@ export class TableFootTag extends TableContainerTag {
      * @return string
      */
     public getTagName(): string {
-        return 'tfoot';
+        return 'tfoot'
     }
 }

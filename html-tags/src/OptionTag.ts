@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Option tag '<option>'
@@ -12,7 +12,7 @@ export class OptionTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'option';
+        return 'option'
     }
 
     /**
@@ -21,7 +21,7 @@ export class OptionTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -30,6 +30,6 @@ export class OptionTag extends HtmlTag {
      * @return void
      */
     public disable(): void {
-        this.addAttr('disabled', 'disabled');
+        this.addAttr('disabled', 'disabled')
     }
 }

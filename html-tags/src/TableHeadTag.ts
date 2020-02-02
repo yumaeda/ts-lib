@@ -1,4 +1,4 @@
-import {TableContainerTag} from './TableContainerTag';
+import { TableContainerTag } from './TableContainerTag'
 
 /**
  * Table head class '<thead>'
@@ -12,6 +12,6 @@ export class TableHeadTag extends TableContainerTag {
      * @return string
      */
     public getTagName(): string {
-        return 'thead';
+        return 'thead'
     }
 }

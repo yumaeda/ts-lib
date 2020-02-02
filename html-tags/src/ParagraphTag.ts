@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Paragraph tag '<p>'
@@ -12,7 +12,7 @@ export class ParagraphTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'p';
+        return 'p'
     }
 
     /**
@@ -21,7 +21,7 @@ export class ParagraphTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -30,6 +30,6 @@ export class ParagraphTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return true;
+        return true
     }
 }

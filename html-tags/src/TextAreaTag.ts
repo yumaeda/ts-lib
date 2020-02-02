@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * TextArea tag '<textarea>'
@@ -14,9 +14,9 @@ export class TextAreaTag extends HtmlTag {
      * @return void
      */
     public constructor(name: string, value: string) {
-        super(value);
-        super.addAttr('name', name);
-        super.addAttr('rows', '4');
+        super(value)
+        super.addAttr('name', name)
+        super.addAttr('rows', '4')
     }
 
     /**
@@ -25,7 +25,7 @@ export class TextAreaTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'textarea';
+        return 'textarea'
     }
 
     /**
@@ -34,6 +34,6 @@ export class TextAreaTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 }

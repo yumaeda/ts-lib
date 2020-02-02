@@ -1,5 +1,5 @@
-import {HtmlTag} from './HtmlTag';
-import {OptionTag} from './OptionTag';
+import { HtmlTag } from './HtmlTag'
+import { OptionTag } from './OptionTag'
 
 /**
  * Select tag '<select>'
@@ -10,12 +10,12 @@ export class SelectTag extends HtmlTag {
     /**
      * Selected index
      */
-    private selectedIndex: number;
+    private selectedIndex: number
 
     /**
      * Options for the select tag
      */
-    private options: OptionTag[];
+    private options: OptionTag[]
 
     /**
      * Constructor for SelectTag class
@@ -23,10 +23,10 @@ export class SelectTag extends HtmlTag {
      * @return void
      */
     public constructor() {
-        super('');
+        super('')
 
-        this.selectedIndex = 0;
-        this.options = [];
+        this.selectedIndex = 0
+        this.options = []
     }
 
     /**
@@ -35,7 +35,7 @@ export class SelectTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'select';
+        return 'select'
     }
 
     /**
@@ -44,7 +44,7 @@ export class SelectTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -55,9 +55,9 @@ export class SelectTag extends HtmlTag {
      * @return void
      */
     public addOption(text: string, value: string): void {
-        const optionTag = new OptionTag(text);
-        optionTag.addAttr('value', value);
-        this.options.push(optionTag);
+        const optionTag = new OptionTag(text)
+        optionTag.addAttr('value', value)
+        this.options.push(optionTag)
     }
 
     /**
@@ -67,10 +67,10 @@ export class SelectTag extends HtmlTag {
      * @return void
      */
     public addLabel(label: string): void {
-        const optionTag = new OptionTag(label);
-        optionTag.addAttr('value', '-1');
-        optionTag.disable();
-        this.options.push(optionTag);
+        const optionTag = new OptionTag(label)
+        optionTag.addAttr('value', '-1')
+        optionTag.disable()
+        this.options.push(optionTag)
     }
 
     /**
@@ -80,11 +80,11 @@ export class SelectTag extends HtmlTag {
      * @return void
      */
     public setSelectedIndex(index: number): void {
-        if ((index < 0) || (index >= this.options.length)) {
-            throw new RangeError('Index is out of range.');
+        if (index < 0 || index >= this.options.length) {
+            throw new RangeError('Index is out of range.')
         }
 
-        this.selectedIndex = index;
+        this.selectedIndex = index
     }
 
     /**
@@ -93,18 +93,18 @@ export class SelectTag extends HtmlTag {
      * @return string
      */
     public getInnerHtml(): string {
-        let html = '';
+        let html = ''
 
-        const optionCount = this.options.length;
+        const optionCount = this.options.length
         for (let i = 0; i < optionCount; ++i) {
             if (this.selectedIndex === i) {
-                this.options[i].addAttr('selected', 'selected');
+                this.options[i].addAttr('selected', 'selected')
             }
 
-            html += this.options[i].getOuterHtml();
+            html += this.options[i].getOuterHtml()
         }
 
-        return html;
+        return html
     }
 
     /**
@@ -113,8 +113,8 @@ export class SelectTag extends HtmlTag {
      * @return string
      */
     public getOuterHtml(): string {
-        this.value = this.getInnerHtml();
+        this.value = this.getInnerHtml()
 
-        return super.getOuterHtml();
+        return super.getOuterHtml()
     }
 }

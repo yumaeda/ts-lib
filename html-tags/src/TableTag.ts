@@ -1,7 +1,7 @@
-import {HtmlTag} from './HtmlTag';
-import {TableBodyTag} from './TableBodyTag';
-import {TableFootTag} from './TableFootTag';
-import {TableHeadTag} from './TableHeadTag';
+import { HtmlTag } from './HtmlTag'
+import { TableBodyTag } from './TableBodyTag'
+import { TableFootTag } from './TableFootTag'
+import { TableHeadTag } from './TableHeadTag'
 
 /**
  * Table tag '<table>'
@@ -12,17 +12,17 @@ export class TableTag extends HtmlTag {
     /**
      * Table head container
      */
-    public head: TableHeadTag;
+    public head: TableHeadTag
 
     /**
      * Table body container
      */
-    public body: TableBodyTag;
+    public body: TableBodyTag
 
     /**
      * Table foot container
      */
-    public foot: TableFootTag;
+    public foot: TableFootTag
 
     /**
      * Constructor for TableTag class
@@ -30,11 +30,11 @@ export class TableTag extends HtmlTag {
      * @return void
      */
     constructor() {
-        super('');
+        super('')
 
-        this.head = new TableHeadTag();
-        this.body = new TableBodyTag();
-        this.foot = new TableFootTag();
+        this.head = new TableHeadTag()
+        this.body = new TableBodyTag()
+        this.foot = new TableFootTag()
     }
 
     /**
@@ -43,7 +43,7 @@ export class TableTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'table';
+        return 'table'
     }
 
     /**
@@ -52,7 +52,7 @@ export class TableTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -61,7 +61,7 @@ export class TableTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return true;
+        return true
     }
 
     /**
@@ -70,12 +70,12 @@ export class TableTag extends HtmlTag {
      * @return string
      */
     public getInnerHtml(): string {
-        let html = '';
-        html += this.head.getOuterHtml();
-        html += this.body.getOuterHtml();
-        html += this.foot.getOuterHtml();
+        let html = ''
+        html += this.head.getOuterHtml()
+        html += this.body.getOuterHtml()
+        html += this.foot.getOuterHtml()
 
-        return html;
+        return html
     }
 
     /**
@@ -84,8 +84,8 @@ export class TableTag extends HtmlTag {
      * @return string
      */
     public getOuterHtml(): string {
-        this.value = this.getInnerHtml();
+        this.value = this.getInnerHtml()
 
-        return super.getOuterHtml();
+        return super.getOuterHtml()
     }
 }

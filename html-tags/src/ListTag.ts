@@ -1,5 +1,5 @@
-import {HtmlTag} from './HtmlTag';
-import {ListItemTag} from './ListItemTag';
+import { HtmlTag } from './HtmlTag'
+import { ListItemTag } from './ListItemTag'
 
 /**
  * List tag '<ul> or <ol>'
@@ -10,12 +10,12 @@ export class ListTag extends HtmlTag {
     /**
      * Boolean value whether the list is ordered or not
      */
-    private ordered: boolean;
+    private ordered: boolean
 
     /**
      * List items
      */
-    private items: ListItemTag[];
+    private items: ListItemTag[]
 
     /**
      * Constructor for ListTag class
@@ -24,10 +24,10 @@ export class ListTag extends HtmlTag {
      * @return void
      */
     public constructor(ordered: boolean) {
-        super('');
+        super('')
 
-        this.ordered = ordered;
-        this.items = [];
+        this.ordered = ordered
+        this.items = []
     }
 
     /**
@@ -36,7 +36,7 @@ export class ListTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return this.ordered ? 'ol' : 'ul';
+        return this.ordered ? 'ol' : 'ul'
     }
 
     /**
@@ -45,7 +45,7 @@ export class ListTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -54,7 +54,7 @@ export class ListTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return true;
+        return true
     }
 
     /**
@@ -64,7 +64,7 @@ export class ListTag extends HtmlTag {
      * @return void
      */
     public addItem(item: ListItemTag): void {
-        this.items.push(item);
+        this.items.push(item)
     }
 
     /**
@@ -73,14 +73,14 @@ export class ListTag extends HtmlTag {
      * @return string
      */
     public getInnerHtml(): string {
-        let html = '';
+        let html = ''
 
-        const itemCount = this.items.length;
+        const itemCount = this.items.length
         for (let i = 0; i < itemCount; ++i) {
-            html += this.items[i].getOuterHtml();
+            html += this.items[i].getOuterHtml()
         }
 
-        return html;
+        return html
     }
 
     /**
@@ -89,8 +89,8 @@ export class ListTag extends HtmlTag {
      * @return string
      */
     public getOuterHtml(): string {
-        this.value = this.getInnerHtml();
+        this.value = this.getInnerHtml()
 
-        return super.getOuterHtml();
+        return super.getOuterHtml()
     }
 }

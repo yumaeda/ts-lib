@@ -1,6 +1,6 @@
-import {FigCaptionTag} from './FigCaptionTag';
-import {HtmlTag} from './HtmlTag';
-import {ImageTag} from './ImageTag';
+import { FigCaptionTag } from './FigCaptionTag'
+import { HtmlTag } from './HtmlTag'
+import { ImageTag } from './ImageTag'
 
 /**
  * Figure tag '<figure>'
@@ -17,11 +17,11 @@ export class FigureTag extends HtmlTag {
      * @return void
      */
     constructor(imgUrl: string, imgCaption: string) {
-        super('');
+        super('')
 
-        const imageTag = new ImageTag(imgUrl);
-        const figCaptionTag = new FigCaptionTag(imgCaption);
-        this.value = imageTag.getOuterHtml() + figCaptionTag.getOuterHtml();
+        const imageTag = new ImageTag(imgUrl)
+        const figCaptionTag = new FigCaptionTag(imgCaption)
+        this.value = imageTag.getOuterHtml() + figCaptionTag.getOuterHtml()
     }
 
     /**
@@ -30,7 +30,7 @@ export class FigureTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'figure';
+        return 'figure'
     }
 
     /**
@@ -39,7 +39,7 @@ export class FigureTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -48,6 +48,6 @@ export class FigureTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return true;
+        return true
     }
 }

@@ -1,5 +1,5 @@
-import {HtmlTag} from './HtmlTag';
-import {TableColumnTag} from './TableColumnTag';
+import { HtmlTag } from './HtmlTag'
+import { TableColumnTag } from './TableColumnTag'
 
 /**
  * Table row tag '<tr>'
@@ -10,7 +10,7 @@ export class TableRowTag extends HtmlTag {
     /**
      * Array of table columns
      */
-    private columns: TableColumnTag[];
+    private columns: TableColumnTag[]
 
     /**
      * Constructor for InputTag class
@@ -18,8 +18,8 @@ export class TableRowTag extends HtmlTag {
      * @return void
      */
     public constructor() {
-        super('');
-        this.columns = [];
+        super('')
+        this.columns = []
     }
 
     /**
@@ -28,7 +28,7 @@ export class TableRowTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'tr';
+        return 'tr'
     }
 
     /**
@@ -37,7 +37,7 @@ export class TableRowTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -46,7 +46,7 @@ export class TableRowTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return true;
+        return true
     }
 
     /**
@@ -56,7 +56,7 @@ export class TableRowTag extends HtmlTag {
      * @return void
      */
     public addColumn(column: TableColumnTag): void {
-        this.columns.push(column);
+        this.columns.push(column)
     }
 
     /**
@@ -65,14 +65,14 @@ export class TableRowTag extends HtmlTag {
      * @return string
      */
     public getInnerHtml(): string {
-        let html = '';
+        let html = ''
 
-        const columnCount = this.columns.length;
+        const columnCount = this.columns.length
         for (let i = 0; i < columnCount; ++i) {
-            html += this.columns[i].getOuterHtml();
+            html += this.columns[i].getOuterHtml()
         }
 
-        return html;
+        return html
     }
 
     /**
@@ -81,8 +81,8 @@ export class TableRowTag extends HtmlTag {
      * @return string
      */
     public getOuterHtml(): string {
-        this.value = this.getInnerHtml();
+        this.value = this.getInnerHtml()
 
-        return super.getOuterHtml();
+        return super.getOuterHtml()
     }
 }

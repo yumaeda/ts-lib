@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Image tag '<img>'
@@ -13,8 +13,8 @@ export class ImageTag extends HtmlTag {
      * @return void
      */
     public constructor(url: string) {
-        super('');
-        super.addAttr('src', url);
+        super('')
+        super.addAttr('src', url)
     }
 
     /**
@@ -23,6 +23,6 @@ export class ImageTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'img';
+        return 'img'
     }
 }

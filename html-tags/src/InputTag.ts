@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Input tag '<input>'
@@ -15,14 +15,14 @@ export class InputTag extends HtmlTag {
      * @return void
      */
     public constructor(name: string, type: string, value: string) {
-        super(value);
+        super(value)
 
-        if (name && (name.length > 0)) {
-            super.addAttr('name', name);
+        if (name && name.length > 0) {
+            super.addAttr('name', name)
         }
 
-        if (type && (type.length > 0)) {
-            super.addAttr('type', type);
+        if (type && type.length > 0) {
+            super.addAttr('type', type)
         }
     }
 
@@ -32,7 +32,7 @@ export class InputTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'input';
+        return 'input'
     }
 
     /**
@@ -41,7 +41,7 @@ export class InputTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return true;
+        return true
     }
 
     /**
@@ -50,6 +50,6 @@ export class InputTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return false;
+        return false
     }
 }

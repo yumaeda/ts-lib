@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * ListItem tag '<li>'
@@ -12,7 +12,7 @@ export class ListItemTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'li';
+        return 'li'
     }
 
     /**
@@ -21,6 +21,6 @@ export class ListItemTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 }

@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Span tag '<span>'
@@ -12,7 +12,7 @@ export class SpanTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'span';
+        return 'span'
     }
 
     /**
@@ -21,7 +21,7 @@ export class SpanTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 
     /**
@@ -30,6 +30,6 @@ export class SpanTag extends HtmlTag {
      * @return boolean
      */
     public isBlock(): boolean {
-        return false;
+        return false
     }
 }

@@ -1,4 +1,4 @@
-import {HtmlTag} from './HtmlTag';
+import { HtmlTag } from './HtmlTag'
 
 /**
  * Label tag '<label>'
@@ -14,10 +14,10 @@ export class LabelTag extends HtmlTag {
      * @return void
      */
     public constructor(target: string, value: string) {
-        super(value);
+        super(value)
 
-        if (target && (target.length > 0)) {
-            super.addAttr('for', target);
+        if (target && target.length > 0) {
+            super.addAttr('for', target)
         }
     }
 
@@ -27,7 +27,7 @@ export class LabelTag extends HtmlTag {
      * @return string
      */
     public getTagName(): string {
-        return 'label';
+        return 'label'
     }
 
     /**
@@ -36,6 +36,6 @@ export class LabelTag extends HtmlTag {
      * @return boolean
      */
     public isSelfClosing(): boolean {
-        return false;
+        return false
     }
 }
