@@ -79,7 +79,7 @@ export class SelectTag extends HtmlTag {
      * @param number index
      * @return void
      */
-    public setSelectedIndex(index: number) {
+    public setSelectedIndex(index: number): void {
         if ((index < 0) || (index >= this.options.length)) {
             throw new RangeError('Index is out of range.');
         }

@@ -1,4 +1,4 @@
-import {IHtmlTag} from './IHtmlTag';
+import {HtmlTagInterface} from './HtmlTagInterface';
 import {KeyValuePair} from './KeyValuePair';
 
 /**
@@ -6,7 +6,7 @@ import {KeyValuePair} from './KeyValuePair';
  *
  * @author Yukitaka Maeda [yumaeda@gmail.com]
  */
-export class HtmlTag implements IHtmlTag {
+export class HtmlTag implements HtmlTagInterface {
     /**
      * Value of the tag
      */
@@ -41,7 +41,7 @@ export class HtmlTag implements IHtmlTag {
      * @param string value
      * @return void
      */
-    public addAttr(key: string, value: string) {
+    public addAttr(key: string, value: string): void {
         // key cannot be an empty string, but value can.
         if ((key && key.length > 0) && (value)) {
             this.attributes.push(new KeyValuePair(key, value));
