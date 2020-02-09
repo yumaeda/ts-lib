@@ -1,12 +1,19 @@
 {
     "compilerOptions": {
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
         "outDir": "./dist/",
         "sourceMap": true,
+        "strict": true,
+        "noImplicitAny": true,
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
         "module": "es6",
+        "removeComments": true,
         "target": "es5",
         "jsx": "react",
-        "allowJs": true,
-        "removeComments": true
+        "allowJs": true
     },
     "exclude": [
         "node_modules"

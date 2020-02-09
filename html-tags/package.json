@@ -4,8 +4,8 @@
   "description": "JavaScript library for HTML tags",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "build": "webpack --progress --profile --colors",
+    "start": "webpack-dev-server --inline --hot --no-info",
     "lint": "npx eslint --ext .js,.ts src --fix"
   },
   "repository": {
