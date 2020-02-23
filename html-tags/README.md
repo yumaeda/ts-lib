@@ -1,13 +1,22 @@
 ## Installation
-1. Install TypeScript & webpack
+1. Install required packages
 ```bash
-sudo npm install -g webpack webpack-cli webpack-dev-server
-sudo npm install -g typescript tslint tslint-webpack-plugin
+npm install
 ```
 
-2. Compile
+2. Initialize TypeScript configuration file
+```bash
+npx tsc --init
+```
+
+3. Compile
 ```bash
 npm run build
+```
+
+3. Linter
+```bash
+npm run lint
 ```
 
 3. Run test
