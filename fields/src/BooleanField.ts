@@ -1,4 +1,4 @@
-import { BaseField } from './BaseField';
+import { BaseField } from './BaseField'
 
 /**
  * Boolean field
@@ -14,10 +14,10 @@ export class BooleanField extends BaseField {
      * @return void
      */
     public constructor(name: string, selected: boolean) {
-        super(name, 'checkbox', '1');
+        super(name, 'checkbox', '1')
 
         if (selected) {
-            this.addAttr('checked', 'checked');
+            this.addAttr('checked', 'checked')
         }
     }
 }

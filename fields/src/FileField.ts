@@ -1,4 +1,4 @@
-import { BaseField } from './BaseField';
+import { BaseField } from './BaseField'
 
 /**
  * File field
@@ -13,6 +13,6 @@ export class FileField extends BaseField {
      * @return void
      */
     public constructor(name: string) {
-        super(name, 'file', '');
+        super(name, 'file', '')
     }
 }

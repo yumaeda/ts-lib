@@ -1,4 +1,4 @@
-import { SelectTag } from '../../html-tags/src/SelectTag';
+import { SelectTag } from '../../html-tags/src/SelectTag'
 
 /**
  * Choice field
@@ -13,7 +13,7 @@ export class ChoiceField extends SelectTag {
      * @return void
      */
     public constructor(name: string) {
-        super();
-        this.addAttr('name', name);
+        super()
+        this.addAttr('name', name)
     }
 }

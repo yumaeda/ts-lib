@@ -1,4 +1,4 @@
-import { NumberField } from './NumberField';
+import { NumberField } from './NumberField'
 
 /**
  * Currency field
@@ -9,7 +9,7 @@ export class CurrencyField extends NumberField {
     /**
      * Currency unit
      */
-    public unit: string;
+    public unit: string
 
     /**
      * Constructor for CurrencyField class
@@ -19,10 +19,10 @@ export class CurrencyField extends NumberField {
      * @return void
      */
     public constructor(name: string, value: string) {
-        super(name, value);
+        super(name, value)
 
-        this.addAttr('step', '10');
-        this.unit = 'yen';
+        this.addAttr('step', '10')
+        this.unit = 'yen'
     }
 
     /**
@@ -31,6 +31,6 @@ export class CurrencyField extends NumberField {
      * @return string
      */
     public getOuterHtml(): string {
-        return (super.getOuterHtml() + '&nbsp;' + this.unit);
+        return super.getOuterHtml() + '&nbsp;' + this.unit
     }
 }

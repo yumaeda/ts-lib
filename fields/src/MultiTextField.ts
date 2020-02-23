@@ -1,4 +1,4 @@
-import { TextAreaTag } from '../../html-tags/src/TextAreaTag';
+import { TextAreaTag } from '../../html-tags/src/TextAreaTag'
 
 /**
  * Multi-text Hidden field
@@ -14,6 +14,6 @@ export class MultiTextField extends TextAreaTag {
      * @return void
      */
     public constructor(name: string, value: string) {
-        super(name, value);
+        super(name, value)
     }
 }

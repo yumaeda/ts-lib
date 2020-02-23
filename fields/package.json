@@ -1,11 +1,12 @@
 {
   "name": "html-tags",
   "version": "1.0.0",
-  "description": "TypeScript: Html input fields",
+  "description": "JavaScript library for HTML tags",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "start": "webpack-dev-server"
+    "build": "webpack --progress --profile --colors",
+    "start": "webpack-dev-server --inline --hot --no-info",
+    "lint": "npx eslint --ext .js,.ts src --fix"
   },
   "repository": {
     "type": "git",
@@ -21,12 +22,16 @@
   },
   "homepage": "https://github.com/yumaeda/ts-lib#readme",
   "devDependencies": {
-    "ts-loader": "^4.5.0",
-    "tslint": "^5.11.0",
-    "tslint-webpack-plugin": "^1.2.2",
-    "typescript": "^3.0.3",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.7"
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.2"
   }
 }

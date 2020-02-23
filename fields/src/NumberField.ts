@@ -1,4 +1,4 @@
-import { BaseField } from './BaseField';
+import { BaseField } from './BaseField'
 
 /**
  * Number field
@@ -14,6 +14,6 @@ export class NumberField extends BaseField {
      * @return void
      */
     public constructor(name: string, value: string) {
-        super(name, 'number', value);
+        super(name, 'number', value)
     }
 }

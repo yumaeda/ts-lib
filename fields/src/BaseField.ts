@@ -1,4 +1,4 @@
-import { InputTag } from '../../html-tags/src/InputTag';
+import { InputTag } from '../../html-tags/src/InputTag'
 
 /**
  * Base field
@@ -9,7 +9,7 @@ export class BaseField extends InputTag {
     /**
      * Whether the field is required or not
      */
-    public required: boolean;
+    public required: boolean
 
     /**
      * Constructor for InputTag class
@@ -20,9 +20,9 @@ export class BaseField extends InputTag {
      * @return void
      */
     public constructor(name: string, type: string, value: string) {
-        super(name, type, value);
+        super(name, type, value)
 
-        this.required = false;
+        this.required = false
     }
 
     /**
@@ -32,9 +32,9 @@ export class BaseField extends InputTag {
      */
     public getOuterHtml(): string {
         if (this.required) {
-            this.addAttr('required', 'required');
+            this.addAttr('required', 'required')
         }
 
-        return super.getOuterHtml();
+        return super.getOuterHtml()
     }
 }
